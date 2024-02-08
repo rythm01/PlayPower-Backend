@@ -1,0 +1,21 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - '4000:4000'
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: Ridham@693#
+      DB_DATABASE: college
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: Ridham@693#
+      MYSQL_DATABASE: college
+    ports:
+      - '3307:3306'
